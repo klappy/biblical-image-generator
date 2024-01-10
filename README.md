@@ -12,7 +12,9 @@ This VS-Code extension generates Biblical images using OpenAI's Dalle-3 API and 
 
 - Unique id appended to prevent overwriting previous images.
 
-- Keyboard shortcut: control + i
+- Keyboard shortcut: `ctrl + i`
+
+- Configurable image path
 
 \!\[feature X\]\(images/feature-x.png\)
 
@@ -22,21 +24,19 @@ This VS-Code extension generates Biblical images using OpenAI's Dalle-3 API and 
 
 VS-Code
 
-<!--
 ## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
 
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something. -->
+- `biblical-image-generator.imagesPath`: Customize path to store files in project.
+- `biblical-image-generator.openaiApiKey`: Paste your OpenAI API Key here.
 
 ## Known Issues
 
-Inconsistencies
+Inconsistencies:
+
+- Character - generating a character will look different each time.
+- Style - the style is inconsistent and sometimes looks cinematic, sketched, or painted.
 
 ## Release Notes
 
