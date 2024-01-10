@@ -1,0 +1,68 @@
+{
+  "name": "biblical-image-generator",
+  "displayName": "Biblical Image Generator",
+  "description": "Generate Biblical Images using OpenAI's DALL-E. Provide a theme, item, person, or passage and the AI will generate an image for you.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "biblical-image-generator.openaiAsk",
+        "title": "Ask OpenAI"
+      },
+      {
+        "command": "biblical-image-generator.imageCreate",
+        "title": "Create Biblical Image"
+      }
+    ],
+    "configuration": {
+      "title": "My Extension Configuration",
+      "properties": {
+        "biblical-image-generator.imagesPath": {
+          "type": "string",
+          "default": "images",
+          "description": "Folder inside project to store images."
+        },
+        "biblical-image-generator.openaiApiKey": {
+          "type": "string",
+          "default": "INSERT-YOUR-OPENAI-API-KEY-HERE",
+          "description": "Insert your OpenAI API Key."
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "biblical-image-generator.imageCreate",
+        "key": "ctrl+i",
+        "mac": "ctrl+i",
+        "when": "explorerViewletVisible"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "openai": "^4.20.1"
+  }
+}
